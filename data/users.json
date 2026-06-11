@@ -1,0 +1,23 @@
+﻿[
+    {
+        "username":  "admin",
+        "createdAt":  "2026-06-11T11:33:04.4472762+05:00",
+        "name":  "Admin",
+        "password":  "admin123",
+        "role":  "admin"
+    },
+    {
+        "username":  "teacher",
+        "createdAt":  "2026-06-11T11:33:04.4472762+05:00",
+        "name":  "Teacher",
+        "password":  "teacher123",
+        "role":  "teacher"
+    },
+    {
+        "username":  "student",
+        "createdAt":  "2026-06-11T11:33:04.4472762+05:00",
+        "name":  "Student",
+        "password":  "student123",
+        "role":  "student"
+    }
+]

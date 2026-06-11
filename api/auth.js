@@ -2,7 +2,7 @@
 const jwt = require('jsonwebtoken');
 const https = require('https');
 const OWNER = 'hasilpurofficial4-creator';
-const REPO = 'STUDY-DATA';
+const REPO = 'STUDY';
 const BRANCH = 'main';
 const SECRET = process.env.JWT_SECRET || 'studyhub_lahore_secret_2024';
 
@@ -34,7 +34,7 @@ async function writeJSON(file, content, token) {
 }
 
 module.exports = async (req, res) => {
-  const token = process.env.GH_TOKEN;
+  const token = process.env.GITHUB_TOKEN;
   if (!token) return res.status(500).json({ error: 'Server config error' });
 
   const { action } = req.query;
@@ -98,3 +98,5 @@ module.exports = async (req, res) => {
 
   res.status(400).json({ error: 'Invalid action' });
 };
+
+

@@ -1,7 +1,7 @@
 
 const https = require('https');
 const OWNER = 'hasilpurofficial4-creator';
-const REPO = 'STUDY-DATA';
+const REPO = 'STUDY';
 const BRANCH = 'main';
 
 function gh(method, urlPath, body, token) {
@@ -32,7 +32,7 @@ async function writeJSON(file, content, token) {
 }
 
 module.exports = async (req, res) => {
-  const token = process.env.GH_TOKEN;
+  const token = process.env.GITHUB_TOKEN;
   if (!token) return res.status(500).json({ error: 'Server config error' });
 
   if (req.method === 'POST') {
@@ -51,3 +51,5 @@ module.exports = async (req, res) => {
 
   res.status(405).json({ error: 'Method not allowed' });
 };
+
+
