@@ -1,1 +1,45 @@
-[]
+[
+  {
+    "id": "mq959ufsc4c7r",
+    "class": "10th",
+    "subject": "english",
+    "questions": [
+      {
+        "question": "2",
+        "options": [
+          "34",
+          "43",
+          "52",
+          "42"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "24",
+        "options": [
+          "234",
+          "234",
+          "234",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "fhjb",
+        "options": [
+          "nfghhj",
+          "fghj",
+          "ssy",
+          "dff"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "time": 30,
+    "totalMarks": 100,
+    "passingPct": 50,
+    "approved": true,
+    "createdBy": "teacher",
+    "createdAt": "2026-06-11T06:56:43.864Z"
+  }
+]
