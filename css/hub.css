@@ -1,0 +1,137 @@
+/* ═══════════════════════════════════════
+   STUDY HUB LAHORE - Hub Navigation
+   ═══════════════════════════════════════ */
+
+.hero-section {
+  text-align: center; padding: var(--space-2xl) 0; margin-bottom: var(--space-xl);
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: var(--space-sm);
+  background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.2);
+  padding: 6px 16px; border-radius: 20px; font-size: 0.8rem;
+  color: var(--accent); margin-bottom: var(--space-lg);
+}
+.hero-badge .pulse-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--success);
+  animation: pulse 2s infinite;
+}
+.hero-title {
+  font-size: 2.8rem; font-weight: 800; line-height: 1.2;
+  margin-bottom: var(--space-md);
+  background: linear-gradient(135deg, var(--accent), #38bdf8, #f472b6);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-desc {
+  font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ── Nav Grid ── */
+.nav-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-lg); margin-top: var(--space-xl);
+}
+.nav-card {
+  position: relative; text-decoration: none; color: inherit;
+  background: var(--bg-glass); backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass); border-radius: var(--radius-xl);
+  padding: var(--space-xl); overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0; transform: translateY(30px);
+  display: flex; flex-direction: column; gap: var(--space-md);
+}
+.nav-card.animated {
+  animation: cardSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes cardSlideIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+.nav-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, transparent 40%, var(--card-color, var(--accent)) 200%);
+  opacity: 0; transition: opacity 0.4s ease;
+}
+.nav-card:hover::before { opacity: 0.08; }
+.nav-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15), var(--shadow-glow);
+  border-color: var(--card-color, var(--accent));
+}
+.nav-card-icon {
+  width: 56px; height: 56px; border-radius: var(--radius-lg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; position: relative; z-index: 1;
+  background: linear-gradient(135deg, var(--card-color, var(--accent)), var(--card-color-end, var(--accent-dark)));
+  color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.nav-card-content { position: relative; z-index: 1; flex: 1; }
+.nav-card-title { font-size: 1.2rem; font-weight: 700; margin-bottom: var(--space-xs); }
+.nav-card-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+.nav-card-arrow {
+  position: relative; z-index: 1; align-self: flex-end;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--bg-card); display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition); color: var(--text-muted);
+}
+.nav-card:hover .nav-card-arrow {
+  background: var(--card-color, var(--accent)); color: #fff;
+  transform: translateX(4px);
+}
+
+/* Card Colors */
+.nav-card[data-page="student"] { --card-color: #6c63ff; --card-color-end: #5a52d5; }
+.nav-card[data-page="teacher"] { --card-color: #38bdf8; --card-color-end: #0ea5e9; }
+.nav-card[data-page="admin"] { --card-color: #f43f5e; --card-color-end: #e11d48; }
+.nav-card[data-page="request"] { --card-color: #fbbf24; --card-color-end: #f59e0b; }
+.nav-card[data-page="exams"] { --card-color: #a855f7; --card-color-end: #9333ea; }
+.nav-card[data-page="about"] { --card-color: #10b981; --card-color-end: #059669; }
+
+/* ── Features Section ── */
+.features-section { margin-top: var(--space-2xl); }
+.features-title {
+  text-align: center; font-size: 1.5rem; font-weight: 700;
+  margin-bottom: var(--space-xl);
+}
+.features-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+.feature-item {
+  text-align: center; padding: var(--space-lg);
+  background: var(--bg-glass); backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glass); border-radius: var(--radius-lg);
+  transition: all var(--transition);
+}
+.feature-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.feature-icon { font-size: 2rem; margin-bottom: var(--space-sm); }
+.feature-name { font-weight: 600; font-size: 0.95rem; margin-bottom: var(--space-xs); }
+.feature-desc { font-size: 0.8rem; color: var(--text-secondary); }
+
+/* ── Demo Info ── */
+.demo-creds {
+  background: var(--bg-glass); backdrop-filter: blur(15px);
+  border: 1px solid var(--border-glass); border-radius: var(--radius-lg);
+  padding: var(--space-lg); margin-top: var(--space-xl);
+}
+.demo-creds h3 { font-size: 1rem; margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-sm); }
+.demo-table { width: 100%; }
+.demo-table td {
+  padding: 8px 12px; font-size: 0.85rem; border-bottom: 1px solid var(--border);
+}
+.demo-table td:first-child { font-weight: 600; color: var(--accent); width: 120px; }
+.demo-table code {
+  background: rgba(108,99,255,0.1); padding: 2px 8px; border-radius: 4px;
+  font-family: 'Cascadia Code', monospace; font-size: 0.82rem;
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: 2rem; }
+  .hero-desc { font-size: 0.95rem; }
+  .nav-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .hero-title { font-size: 1.6rem; }
+  .features-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Hub Lahore</title>
+  <meta name="description" content="Study Hub Lahore - Your digital exam and learning platform">
+  <meta name="theme-color" content="#6c63ff">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/hub.css">
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('shl_theme') || 'dark');</script>
+</head>
+<body>
+  <div class="bg-blobs"><div class="bg-blob"></div><div class="bg-blob"></div><div class="bg-blob"></div></div>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-brand">
+        <div class="header-logo">SH</div>
+        <div>
+          <div class="header-title">Study Hub <span>Lahore</span></div>
+          <div class="header-subtitle">Digital Learning Platform</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span id="header-datetime"></span>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero -->
+      <section class="hero-section animate-fadeInUp">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          Online Platform
+        </div>
+        <h1 class="hero-title">Study Hub Lahore</h1>
+        <p class="hero-desc">Your complete digital examination and learning platform. Take MCQ exams, track results, and manage academic content — all in one beautiful place.</p>
+      </section>
+
+      <!-- Navigation Cards -->
+      <nav class="nav-grid" id="nav-grid">
+        <a href="student.html" class="nav-card" data-page="student">
+          <div class="nav-card-icon">📝</div>
+          <div class="nav-card-content">
+            <div class="nav-card-title">Student Portal</div>
+            <div class="nav-card-desc">Take approved exams, view results, and download scorecards with detailed analytics.</div>
+          </div>
+          <div class="nav-card-arrow">→</div>
+        </a>
+
+        <a href="teacher.html" class="nav-card" data-page="teacher">
+          <div class="nav-card-icon">👨‍🏫</div>
+          <div class="nav-card-content">
+            <div class="nav-card-title">Teacher Portal</div>
+            <div class="nav-card-desc">Create MCQ exams, manage questions, and view student performance results.</div>
+          </div>
+          <div class="nav-card-arrow">→</div>
+        </a>
+
+        <a href="admin.html" class="nav-card" data-page="admin">
+          <div class="nav-card-icon">🛡️</div>
+          <div class="nav-card-content">
+            <div class="nav-card-title">Admin Panel</div>
+            <div class="nav-card-desc">Manage users, approve exams, control access and system settings.</div>
+          </div>
+          <div class="nav-card-arrow">→</div>
+        </a>
+
+        <a href="request.html" class="nav-card" data-page="request">
+          <div class="nav-card-icon">📩</div>
+          <div class="nav-card-content">
+            <div class="nav-card-title">Submit Request</div>
+            <div class="nav-card-desc">Need access or have a question? Send a request to the admin team.</div>
+          </div>
+          <div class="nav-card-arrow">→</div>
+        </a>
+
+        <a href="#features" class="nav-card" data-page="exams">
+          <div class="nav-card-icon">📋</div>
+          <div class="nav-card-content">
+            <div class="nav-card-title">MCQ Exams</div>
+            <div class="nav-card-desc">Timed exams with instant grading, detailed results, and downloadable scorecards.</div>
+          </div>
+          <div class="nav-card-arrow">→</div>
+        </a>
+
+        <a href="#about" class="nav-card" data-page="about">
+          <div class="nav-card-icon">ℹ️</div>
+          <div class="nav-card-content">
+            <div class="nav-card-title">About</div>
+            <div class="nav-card-desc">Learn about Study Hub Lahore, our mission, and platform features.</div>
+          </div>
+          <div class="nav-card-arrow">→</div>
+        </a>
+      </nav>
+
+      <!-- Features -->
+      <section class="features-section" id="features">
+        <h2 class="features-title animate-fadeInUp">Platform Features</h2>
+        <div class="features-grid">
+          <div class="feature-item animate-fadeInUp stagger-1">
+            <div class="feature-icon">⏱️</div>
+            <div class="feature-name">Timed Exams</div>
+            <div class="feature-desc">Countdown timer with auto-submit</div>
+          </div>
+          <div class="feature-item animate-fadeInUp stagger-2">
+            <div class="feature-icon">📊</div>
+            <div class="feature-name">Analytics</div>
+            <div class="feature-desc">Detailed score breakdowns</div>
+          </div>
+          <div class="feature-item animate-fadeInUp stagger-3">
+            <div class="feature-icon">📥</div>
+            <div class="feature-name">Download</div>
+            <div class="feature-desc">PDF & Excel result export</div>
+          </div>
+          <div class="feature-item animate-fadeInUp stagger-4">
+            <div class="feature-icon">🔒</div>
+            <div class="feature-name">Secure Auth</div>
+            <div class="feature-desc">JWT-based role access</div>
+          </div>
+          <div class="feature-item animate-fadeInUp stagger-5">
+            <div class="feature-icon">🌙</div>
+            <div class="feature-name">Dark Mode</div>
+            <div class="feature-desc">Easy on the eyes</div>
+          </div>
+          <div class="feature-item animate-fadeInUp stagger-6">
+            <div class="feature-icon">📱</div>
+            <div class="feature-name">Responsive</div>
+            <div class="feature-desc">Works on any device</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Demo Credentials -->
+      <section class="demo-creds animate-fadeInUp" id="about">
+        <h3>🔑 Demo Credentials</h3>
+        <table class="demo-table">
+          <tr><td>Admin</td><td><code>admin</code> / <code>admin123</code></td></tr>
+          <tr><td>Teacher</td><td><code>teacher</code> / <code>teacher123</code></td></tr>
+          <tr><td>Student</td><td><code>student</code> / <code>student123</code></td></tr>
+        </table>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      Study Hub Lahore &copy; 2024 &mdash; Built with ❤️ for students
+    </footer>
+  </div>
+
+  <script type="module" src="js/pages/hub.js"></script>
+</body>
+</html>

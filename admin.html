@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Study Hub Lahore</title>
+  <meta name="theme-color" content="#f43f5e">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('shl_theme') || 'dark');</script>
+</head>
+<body>
+  <div class="bg-blobs"><div class="bg-blob"></div><div class="bg-blob"></div><div class="bg-blob"></div></div>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-brand">
+        <a href="index.html" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px">
+          <div class="header-logo" style="background:linear-gradient(135deg,#f43f5e,#e11d48)">SH</div>
+          <div>
+            <div class="header-title">Study Hub <span>Lahore</span></div>
+            <div class="header-subtitle">Admin Panel</div>
+          </div>
+        </a>
+      </div>
+      <div class="header-actions">
+        <span id="header-datetime"></span>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
+        <span id="user-badge" class="badge badge-danger hidden"></span>
+        <button id="logout-btn" class="btn btn-ghost btn-sm hidden">Logout</button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Login -->
+      <div id="login-section" class="login-container">
+        <div class="login-card">
+          <div class="login-icon" style="background:linear-gradient(135deg,#f43f5e,#e11d48)">🛡️</div>
+          <h2 class="login-title">Admin Login</h2>
+          <p class="login-subtitle">Restricted area - Admin access only</p>
+          <form class="login-form" id="login-form">
+            <div class="form-group">
+              <label class="form-label">Username</label>
+              <input type="text" class="form-input" id="login-user" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-input" id="login-pass" required>
+            </div>
+            <button type="submit" class="btn btn-danger btn-lg" style="width:100%">Admin Sign In</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Admin Dashboard -->
+      <div id="dashboard-section" class="hidden">
+        <h2 class="features-title animate-fadeInUp">Admin Dashboard</h2>
+
+        <!-- Stats -->
+        <div class="grid mt-2" style="grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--space-md)">
+          <div class="glass-card text-center" style="padding:var(--space-lg)">
+            <div style="font-size:2rem">👥</div>
+            <div style="font-size:1.5rem;font-weight:700" id="stat-users">0</div>
+            <div class="text-muted" style="font-size:0.8rem">Total Users</div>
+          </div>
+          <div class="glass-card text-center" style="padding:var(--space-lg)">
+            <div style="font-size:2rem">📝</div>
+            <div style="font-size:1.5rem;font-weight:700" id="stat-exams">0</div>
+            <div class="text-muted" style="font-size:0.8rem">Total Exams</div>
+          </div>
+          <div class="glass-card text-center" style="padding:var(--space-lg)">
+            <div style="font-size:2rem">📊</div>
+            <div style="font-size:1.5rem;font-weight:700" id="stat-results">0</div>
+            <div class="text-muted" style="font-size:0.8rem">Results</div>
+          </div>
+          <div class="glass-card text-center" style="padding:var(--space-lg)">
+            <div style="font-size:2rem">📩</div>
+            <div style="font-size:1.5rem;font-weight:700" id="stat-requests">0</div>
+            <div class="text-muted" style="font-size:0.8rem">Requests</div>
+          </div>
+        </div>
+
+        <!-- Add User -->
+        <div class="glass-card mt-3 animate-fadeInUp">
+          <h3 style="margin-bottom:var(--space-lg)">➕ Add New User</h3>
+          <form id="add-user-form">
+            <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--space-md)">
+              <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-input" id="new-name" placeholder="Full name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-input" id="new-username" placeholder="Username" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Password</label>
+                <input type="text" class="form-input" id="new-password" placeholder="Password" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Role</label>
+                <select class="form-select" id="new-role" required>
+                  <option value="student">Student</option>
+                  <option value="teacher">Teacher</option>
+                  <option value="admin">Admin</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success mt-1">Add User</button>
+          </form>
+        </div>
+
+        <!-- Users List -->
+        <div class="glass-card mt-3 animate-fadeInUp">
+          <h3 style="margin-bottom:var(--space-lg)">👥 All Users</h3>
+          <div id="users-list"></div>
+        </div>
+
+        <!-- Requests -->
+        <div class="glass-card mt-3 animate-fadeInUp">
+          <h3 style="margin-bottom:var(--space-lg)">📩 User Requests</h3>
+          <div id="requests-list"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      Study Hub Lahore &copy; 2024 &mdash; <a href="index.html">Home</a>
+    </footer>
+  </div>
+  <script type="module" src="js/pages/admin.js"></script>
+</body>
+</html>

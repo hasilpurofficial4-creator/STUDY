@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal - Study Hub Lahore</title>
+  <meta name="theme-color" content="#6c63ff">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/exam.css">
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('shl_theme') || 'dark');</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+</head>
+<body>
+  <div class="bg-blobs"><div class="bg-blob"></div><div class="bg-blob"></div><div class="bg-blob"></div></div>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-brand">
+        <a href="index.html" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px">
+          <div class="header-logo">SH</div>
+          <div>
+            <div class="header-title">Study Hub <span>Lahore</span></div>
+            <div class="header-subtitle">Student Portal</div>
+          </div>
+        </a>
+      </div>
+      <div class="header-actions">
+        <span id="header-datetime"></span>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
+        <span id="user-badge" class="badge badge-primary hidden"></span>
+        <button id="logout-btn" class="btn btn-ghost btn-sm hidden">Logout</button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Login Section -->
+      <div id="login-section" class="login-container">
+        <div class="login-card">
+          <div class="login-icon">📝</div>
+          <h2 class="login-title">Student Login</h2>
+          <p class="login-subtitle">Sign in to access your exams</p>
+          <form class="login-form" id="login-form">
+            <div class="form-group">
+              <label class="form-label">Username</label>
+              <input type="text" class="form-input" id="login-user" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-input" id="login-pass" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Sign In</button>
+          </form>
+          <div class="login-footer">
+            Don't have an account? <a href="request.html">Request Access</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exam List Section -->
+      <div id="exam-list-section" class="hidden">
+        <h2 class="features-title animate-fadeInUp">Available Exams</h2>
+        <div class="exam-list" id="exam-list"></div>
+        <div id="no-exams" class="text-center text-muted mt-3 hidden">
+          <p style="font-size:3rem">📭</p>
+          <p>No exams available yet. Check back later!</p>
+        </div>
+      </div>
+
+      <!-- Exam Taking Section -->
+      <div id="exam-take-section" class="hidden">
+        <div class="exam-container">
+          <div class="exam-header-bar">
+            <div>
+              <strong id="exam-title"></strong>
+              <div class="exam-progress" id="exam-progress"></div>
+            </div>
+            <div class="exam-timer" id="exam-timer">⏱️ --:--</div>
+          </div>
+          <div id="question-area"></div>
+          <div class="exam-nav">
+            <button class="btn btn-outline" id="prev-btn" disabled>← Previous</button>
+            <button class="btn btn-primary" id="next-btn">Next →</button>
+            <button class="btn btn-success hidden" id="submit-exam-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Section -->
+      <div id="result-section" class="hidden">
+        <div class="result-container" id="result-download-area">
+          <div class="result-hero">
+            <div class="result-brand">
+              <h2>📚 Study Hub Lahore</h2>
+              <p>Examination Result</p>
+            </div>
+            <div class="result-score-circle" id="score-circle">
+              <span class="score-text" id="score-pct">0%</span>
+              <span class="score-label">Score</span>
+            </div>
+            <div class="result-status" id="result-status"></div>
+            <div class="result-stats" id="result-stats"></div>
+          </div>
+          <div class="result-details" id="result-details"></div>
+        </div>
+        <div class="flex justify-center gap-1 mt-2">
+          <button class="btn btn-primary" id="download-pdf-btn">📥 Download PDF</button>
+          <button class="btn btn-outline" id="back-exams-btn">← Back to Exams</button>
+        </div>
+      </div>
+
+      <!-- Past Results Section -->
+      <div id="past-results-section" class="hidden mt-3">
+        <h3 class="features-title">Past Results</h3>
+        <div id="past-results-list"></div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      Study Hub Lahore &copy; 2024 &mdash; <a href="index.html">Home</a>
+    </footer>
+  </div>
+  <script type="module" src="js/pages/student.js"></script>
+</body>
+</html>
